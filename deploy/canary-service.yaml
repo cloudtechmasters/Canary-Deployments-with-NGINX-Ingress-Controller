@@ -2,8 +2,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-prod
-  namespace: demo-prod
+  name: demo-canary
+  namespace: demo-canary
 spec:
   ports:
   - port: 80
@@ -11,5 +11,5 @@ spec:
     targetPort: 8080
   selector:
     app: demo
-    version: 1.0.0
+    version: 1.0.1
   type: ClusterIP

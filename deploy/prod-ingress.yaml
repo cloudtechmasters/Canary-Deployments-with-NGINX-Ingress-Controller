@@ -1,0 +1,23 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+  labels:
+    app: app
+    version: 1.0.0
+  name: demo-ingress
+  namespace: demo-prod
+spec:
+  rules:
+  - host: test.tushar10pute.click
+    http:
+      paths:
+      - backend:
+          service:
+             name: demo-prod
+             port: 
+               number: 80
+        path: /
+        pathType: Prefix
